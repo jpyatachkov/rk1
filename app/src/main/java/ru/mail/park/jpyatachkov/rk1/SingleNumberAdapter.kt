@@ -47,11 +47,10 @@ class SingleNumberAdapter(
             context.getColor(R.color.negativeBackground)
         }
 
-        viewHolder.singleNumberLayout.setBackgroundColor(color)
+        viewHolder.numberTextView.setBackgroundColor(color)
     }
 
     class SingleNumberViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val singleNumberLayout = view.singleNumberLayout!!
         val minusButton = view.minusButton!!
         val numberTextView = view.numberTextView!!
         val plusButton = view.plusButton!!
