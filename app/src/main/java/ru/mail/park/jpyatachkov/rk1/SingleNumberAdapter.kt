@@ -47,7 +47,7 @@ class SingleNumberAdapter(
             context.getColor(R.color.negativeBackground)
         }
 
-        viewHolder.numberTextView.setBackgroundColor(color)
+        viewHolder.itemView.setBackgroundColor(color)
     }
 
     class SingleNumberViewHolder(view: View) : RecyclerView.ViewHolder(view) {
