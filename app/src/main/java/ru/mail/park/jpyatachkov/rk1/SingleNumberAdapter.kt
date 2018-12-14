@@ -18,16 +18,16 @@ class SingleNumberAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: SingleNumberViewHolder, position: Int) {
-        viewHolder.numberTextView.text = items[position].toString()
+        val item = items[position]
+        viewHolder.numberTextView.text = item.toString()
+        changeBackgroundColorByItem(item, viewHolder)
 
         viewHolder.minusButton.setOnClickListener {
-            --items[position]
-            updateItem(position, viewHolder)
+            updateItem(--items[position], viewHolder)
         }
 
         viewHolder.plusButton.setOnClickListener {
-            ++items[position]
-            updateItem(position, viewHolder)
+            updateItem(++items[position], viewHolder)
         }
     }
 
@@ -35,8 +35,7 @@ class SingleNumberAdapter(
         return items.size
     }
 
-    private fun updateItem(position: Int, viewHolder: SingleNumberViewHolder) {
-        val item = items[position]
+    private fun updateItem(item: Int, viewHolder: SingleNumberViewHolder) {
         viewHolder.numberTextView.text = item.toString()
         changeBackgroundColorByItem(item, viewHolder)
     }
@@ -47,10 +46,12 @@ class SingleNumberAdapter(
         } else {
             context.getColor(R.color.negativeBackground)
         }
-        viewHolder.itemView.setBackgroundColor(color)
+
+        viewHolder.singleNumberLayout.setBackgroundColor(color)
     }
 
     class SingleNumberViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val singleNumberLayout = view.singleNumberLayout!!
         val minusButton = view.minusButton!!
         val numberTextView = view.numberTextView!!
         val plusButton = view.plusButton!!
