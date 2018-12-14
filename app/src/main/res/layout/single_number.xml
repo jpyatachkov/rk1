@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="wrap_content"
+              android:layout_width="match_parent"
+              android:layout_margin="@dimen/layoutMargin"
+              android:orientation="horizontal">
+
+    <Button android:id="@+id/minusButton" android:layout_width="@dimen/buttonSize"
+            android:layout_height="@dimen/buttonSize" android:text="@string/minus"/>
+
+    <TextView android:id="@+id/numberTextView" android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+
+    <Button android:id="@+id/plusButton" android:layout_width="@dimen/buttonSize"
+            android:layout_height="@dimen/buttonSize" android:text="@string/plus"/>
+
+</LinearLayout>
