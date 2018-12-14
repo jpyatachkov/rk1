@@ -1,4 +1,3 @@
 <resources>
     <dimen name="layoutMargin">8dp</dimen>
-    <dimen name="buttonSize">48dp</dimen>
 </resources>
